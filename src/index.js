@@ -3,7 +3,7 @@ import { transformSync } from '@babel/core'
 export default opts => {
   try {
     return {
-      code: transformSync(opts.source, { filename: opts.filename }).code,
+      code: transformSync(opts.source, { presets: ['@babel/preset-env'], filename: opts.filename }).code,
     }
   } catch (error) {
     return {
