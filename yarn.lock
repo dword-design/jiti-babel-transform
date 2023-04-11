@@ -1383,9 +1383,9 @@
     tinycolor2 "^1.4.1"
 
 "@dword-design/functions@^5.0.3":
-  version "5.0.9"
-  resolved "https://registry.yarnpkg.com/@dword-design/functions/-/functions-5.0.9.tgz#1115f062e07c574f23c2545115a02d037523b1f4"
-  integrity sha512-Qgn0J5rUAgWMwqs8Dtx5okxRPQSBft35SYSwh4nDtZa5WnOzVtS5WOP0Mwccn4VykPKkjBKzxnjHUkN6QXpMFA==
+  version "5.0.11"
+  resolved "https://registry.yarnpkg.com/@dword-design/functions/-/functions-5.0.11.tgz#b7b8e6f28cf4ae2de2fc8e7799c141ba21bb2389"
+  integrity sha512-rJu/959wNAPh9Mfs+f9eOATpXV0Fdzts4QI//O28Ap96UF7mQAI40xXVO1AYy1QKAapANje3XjGW5dJwx2gi7w==
   dependencies:
     "@dword-design/endent" "^1.0.0"
     delay "^5.0.0"
