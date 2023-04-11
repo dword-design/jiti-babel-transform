@@ -1,9 +1,13 @@
 import { transformSync } from '@babel/core'
+import packageName from 'depcheck-package-name'
 
 export default opts => {
   try {
     return {
-      code: transformSync(opts.source, { presets: ['@babel/preset-env'], filename: opts.filename }).code,
+      code: transformSync(opts.source, {
+        filename: opts.filename,
+        presets: [packageName`@babel/preset-env`],
+      }).code,
     }
   } catch (error) {
     return {

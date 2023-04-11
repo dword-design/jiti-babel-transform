@@ -1,5 +1,4 @@
 import { endent } from '@dword-design/functions'
-import packageName from 'depcheck-package-name'
 import { execaCommand } from 'execa'
 import fs from 'fs-extra'
 import jiti from 'jiti'
@@ -27,7 +26,6 @@ export default {
       '.babelrc.json',
       JSON.stringify({
         extends: '@dword-design/babel-config',
-        // presets: ['@babel/preset-env'],
       }),
     )
     await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
@@ -39,7 +37,7 @@ export default {
 
         import self from '../src/index.js'
 
-        jiti(undefined, { interopDefault: true, esmResolve: true, transform: self })('./inner.js')
+        jiti(undefined, { interopDefault: true, esmResolve: true, transform: self })('./inner.js')
       `,
     )
     await execaCommand('node index.js')
