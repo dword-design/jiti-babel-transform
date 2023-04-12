@@ -1,5 +1,4 @@
-import { endent } from '@dword-design/functions'
-import { execaCommand } from 'execa'
+import packageName from 'depcheck-package-name'
 import fs from 'fs-extra'
 import jiti from 'jiti'
 import withLocalTmpDir from 'with-local-tmp-dir'
@@ -24,16 +23,31 @@ export default {
   export: async () => {
     await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
     await fs.outputFile('inner.js', 'export default 1')
-    await fs.outputFile(
-      'index.js',
-      endent`
-        import jiti from 'jiti'
-
-        import self from '../src/index.js'
-
-        jiti(undefined, { interopDefault: true, esmResolve: true, transform: self })('./inner.js')
-      `,
-    )
-    await execaCommand('node index.js')
+    jiti(undefined, {
+      esmResolve: true,
+      interopDefault: true,
+      transform: self,
+    })('./inner.js')
+  },
+  'inline config': async () => {
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
+    await fs.outputFile('inner.js', "export default '1'")
+    expect(
+      jiti(undefined, {
+        esmResolve: true,
+        interopDefault: true,
+        transform: self,
+        transformOptions: {
+          babel: {
+            plugins: [
+              [
+                packageName`babel-plugin-search-and-replace`,
+                { rules: [{ replace: '2', search: '1' }] },
+              ],
+            ],
+          },
+        },
+      })('./inner.js'),
+    ).toEqual('2')
   },
 }

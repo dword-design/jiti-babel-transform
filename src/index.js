@@ -6,6 +6,7 @@ export default opts => {
     return {
       code: transformSync(opts.source, {
         filename: opts.filename,
+        ...opts.babel,
         presets: [packageName`@babel/preset-env`],
       }).code,
     }
