@@ -29,6 +29,15 @@ export default {
       transform: self,
     })('./inner.js')
   },
+  'import.meta': async () => {
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
+    await fs.outputFile('inner.js', 'import.meta.url')
+    jiti(undefined, {
+      esmResolve: true,
+      interopDefault: true,
+      transform: self,
+    })('./inner.js')
+  },
   'inline config': async () => {
     await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
     await fs.outputFile('inner.js', "export default '1'")

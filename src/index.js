@@ -1,13 +1,18 @@
 import { transformSync } from '@babel/core'
+import { cloneDeep } from '@dword-design/functions'
 import packageName from 'depcheck-package-name'
 
 export default opts => {
+  const babelOpts = cloneDeep(opts.babel)
+  babelOpts.presets = babelOpts.presets || []
+  babelOpts.plugins = babelOpts.plugins || []
+  babelOpts.presets.push(packageName`@babel/preset-env`)
+  babelOpts.plugins.push(packageName`babel-plugin-transform-import-meta`)
   try {
     return {
       code: transformSync(opts.source, {
         filename: opts.filename,
-        ...opts.babel,
-        presets: [packageName`@babel/preset-env`],
+        ...babelOpts,
       }).code,
     }
   } catch (error) {
