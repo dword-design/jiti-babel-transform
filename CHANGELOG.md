@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.4...v1.0.5) (2023-04-12)
+
+
+### Bug Fixes
+
+* allow inline config ([36330a7](https://github.com/dword-design/jiti-babel-transform/commit/36330a7a4c160da4c58a99d9828f2b5025ba8460))
+
 ## [1.0.4](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.3...v1.0.4) (2023-04-12)
 
 
