@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.5...v1.0.6) (2023-04-12)
+
+
+### Bug Fixes
+
+* fix import meta ([1871e31](https://github.com/dword-design/jiti-babel-transform/commit/1871e3122ac4f7af3d79c785300ab07ababf923d))
+
 ## [1.0.5](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.4...v1.0.5) (2023-04-12)
 
 
