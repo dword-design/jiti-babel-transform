@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.6...v1.0.7) (2023-04-12)
+
+
+### Bug Fixes
+
+* foo ([0e9f2b2](https://github.com/dword-design/jiti-babel-transform/commit/0e9f2b2f0c875990eb3a1cd15bbf4609f98e6704))
+
 ## [1.0.6](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.5...v1.0.6) (2023-04-12)
 
 
