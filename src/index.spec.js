@@ -22,12 +22,6 @@ export default {
     this.resetWithLocalTmpDir = await withLocalTmpDir()
   },
   export: async () => {
-    await fs.outputFile(
-      '.babelrc.json',
-      JSON.stringify({
-        extends: '@dword-design/babel-config',
-      }),
-    )
     await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
     await fs.outputFile('inner.js', 'export default 1')
     await fs.outputFile(
