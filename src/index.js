@@ -6,6 +6,9 @@ export default opts => {
   const babelOpts = cloneDeep(opts.babel)
   babelOpts.presets = babelOpts.presets || []
   babelOpts.plugins = babelOpts.plugins || []
+  babelOpts.presets = babelOpts.presets.filter(
+    preset => [].concat(preset)[0] !== '@babel/preset-env',
+  )
   babelOpts.presets.push(packageName`@babel/preset-env`)
   babelOpts.plugins.push(packageName`babel-plugin-transform-import-meta`)
   try {

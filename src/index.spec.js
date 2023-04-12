@@ -20,6 +20,20 @@ export default {
   async beforeEach() {
     this.resetWithLocalTmpDir = await withLocalTmpDir()
   },
+  'existing env preset': async () => {
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
+    await fs.outputFile('inner.js', 'import.meta.url')
+    jiti(undefined, {
+      esmResolve: true,
+      interopDefault: true,
+      transform: self,
+      transformOptions: {
+        babel: {
+          presets: ['@babel/preset-env'],
+        },
+      },
+    })('./inner.js')
+  },
   export: async () => {
     await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
     await fs.outputFile('inner.js', 'export default 1')
