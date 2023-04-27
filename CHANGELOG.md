@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.8...v1.0.9) (2023-04-27)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v5.0.15 ([fadb6ea](https://github.com/dword-design/jiti-babel-transform/commit/fadb6ea008683c148141709d75daaeb730358266))
+
 ## [1.0.8](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.7...v1.0.8) (2023-04-18)
 
 
