@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.10...v1.0.11) (2023-04-29)
+
+
+### Bug Fixes
+
+* update dependency @babel/preset-env to v7.21.5 ([6ee59f6](https://github.com/dword-design/jiti-babel-transform/commit/6ee59f606667ab082a6a39f2f7fb0024271b60c8))
+
 ## [1.0.10](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.9...v1.0.10) (2023-04-29)
 
 
