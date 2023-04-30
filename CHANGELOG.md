@@ -1,3 +1,11 @@
+## [1.0.12](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.11...v1.0.12) (2023-04-30)
+
+
+### Bug Fixes
+
+* fix node version for preset ([#15](https://github.com/dword-design/jiti-babel-transform/issues/15)) ([59abf84](https://github.com/dword-design/jiti-babel-transform/commit/59abf845b44d98797a1202e88589859616df0e53))
+* update dependency @dword-design/functions to v5.0.17 ([173e2bf](https://github.com/dword-design/jiti-babel-transform/commit/173e2bff23ac8889dbb958e7b1a399c3851a6ee2))
+
 ## [1.0.11](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.10...v1.0.11) (2023-04-29)
 
 
