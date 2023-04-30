@@ -9,7 +9,7 @@ export default opts => {
   babelOpts.presets = babelOpts.presets.filter(
     preset => [].concat(preset)[0] !== '@babel/preset-env',
   )
-  babelOpts.presets.push(packageName`@babel/preset-env`)
+  babelOpts.presets.push([packageName`@babel/preset-env`, { targets: { node: 14 } }])
   babelOpts.plugins.push(packageName`babel-plugin-transform-import-meta`)
   try {
     return {
