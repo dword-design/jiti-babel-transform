@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
-    "@dword-design/functions": "^5.0.12",
+    "@dword-design/functions": "^6.0.0",
     "babel-plugin-transform-import-meta": "^2.2.0",
     "depcheck-package-name": "^3.0.0"
   },
