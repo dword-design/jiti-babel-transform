@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.13...v2.0.0) (2024-08-17)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#34](https://github.com/dword-design/jiti-babel-transform/issues/34)) ([c5d9ba6](https://github.com/dword-design/jiti-babel-transform/commit/c5d9ba6be0cc02bf833aa85ae63051bc271edc56))
+
+
+### BREAKING CHANGES
+
+* node >= 18
+
 ## [1.0.13](https://github.com/dword-design/jiti-babel-transform/compare/v1.0.12...v1.0.13) (2023-05-02)
 
 
