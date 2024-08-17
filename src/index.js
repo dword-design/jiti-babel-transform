@@ -11,13 +11,14 @@ export default opts => {
   )
   babelOpts.presets.push([
     packageName`@babel/preset-env`,
-    { targets: { node: 14 } },
+    { targets: { node: 18 } },
   ])
   babelOpts.plugins.push(packageName`babel-plugin-transform-import-meta`)
   try {
     return {
       code: transformSync(opts.source, {
         filename: opts.filename,
+        rootMode: 'upward-optional',
         ...babelOpts,
       }).code,
     }
