@@ -1,60 +1,61 @@
-import packageName from 'depcheck-package-name'
-import fs from 'fs-extra'
-import jiti from 'jiti'
-import withLocalTmpDir from 'with-local-tmp-dir'
+import packageName from 'depcheck-package-name';
+import fs from 'fs-extra';
+import jiti from 'jiti';
+import withLocalTmpDir from 'with-local-tmp-dir';
 
-import self from './index.js'
+import self from './index.js';
 
 export default {
   async afterEach() {
-    await this.resetWithLocalTmpDir()
+    await this.resetWithLocalTmpDir();
   },
   babelrc: async () => {
     await fs.outputFile(
       '.babelrc.json',
       JSON.stringify({ extends: '@dword-design/babel-config' }),
-    )
-    await fs.outputFile('inner.js', '[1, 2] |> x => x * 2')
-    jiti(undefined, { transform: self })('./inner.js')
+    );
+
+    await fs.outputFile('inner.js', '[1, 2] |> x => x * 2');
+    jiti(undefined, { transform: self })('./inner.js');
   },
   async beforeEach() {
-    this.resetWithLocalTmpDir = await withLocalTmpDir()
+    this.resetWithLocalTmpDir = await withLocalTmpDir();
   },
   'existing env preset': async () => {
-    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
-    await fs.outputFile('inner.js', 'import.meta.url')
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }));
+    await fs.outputFile('inner.js', 'import.meta.url');
+
     jiti(undefined, {
       esmResolve: true,
       interopDefault: true,
       transform: self,
-      transformOptions: {
-        babel: {
-          presets: ['@babel/preset-env'],
-        },
-      },
-    })('./inner.js')
+      transformOptions: { babel: { presets: ['@babel/preset-env'] } },
+    })('./inner.js');
   },
   export: async () => {
-    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
-    await fs.outputFile('inner.js', 'export default 1')
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }));
+    await fs.outputFile('inner.js', 'export default 1');
+
     jiti(undefined, {
       esmResolve: true,
       interopDefault: true,
       transform: self,
-    })('./inner.js')
+    })('./inner.js');
   },
   'import.meta': async () => {
-    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
-    await fs.outputFile('inner.js', 'import.meta.url')
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }));
+    await fs.outputFile('inner.js', 'import.meta.url');
+
     jiti(undefined, {
       esmResolve: true,
       interopDefault: true,
       transform: self,
-    })('./inner.js')
+    })('./inner.js');
   },
   'inline config': async () => {
-    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
-    await fs.outputFile('inner.js', "export default '1'")
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }));
+    await fs.outputFile('inner.js', "export default '1'");
+
     expect(
       jiti(undefined, {
         esmResolve: true,
@@ -71,6 +72,6 @@ export default {
           },
         },
       })('./inner.js'),
-    ).toEqual('2')
+    ).toEqual('2');
   },
-}
+};

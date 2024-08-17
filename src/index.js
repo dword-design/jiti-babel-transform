@@ -1,19 +1,23 @@
-import { transformSync } from '@babel/core'
-import { cloneDeep } from '@dword-design/functions'
-import packageName from 'depcheck-package-name'
+import { transformSync } from '@babel/core';
+import { cloneDeep } from '@dword-design/functions';
+import packageName from 'depcheck-package-name';
 
 export default opts => {
-  const babelOpts = cloneDeep(opts.babel)
-  babelOpts.presets = babelOpts.presets || []
-  babelOpts.plugins = babelOpts.plugins || []
+  const babelOpts = cloneDeep(opts.babel);
+  babelOpts.presets = babelOpts.presets || [];
+  babelOpts.plugins = babelOpts.plugins || [];
+
   babelOpts.presets = babelOpts.presets.filter(
     preset => [].concat(preset)[0] !== '@babel/preset-env',
-  )
+  );
+
   babelOpts.presets.push([
     packageName`@babel/preset-env`,
     { targets: { node: 18 } },
-  ])
-  babelOpts.plugins.push(packageName`babel-plugin-transform-import-meta`)
+  ]);
+
+  babelOpts.plugins.push(packageName`babel-plugin-transform-import-meta`);
+
   try {
     return {
       code: transformSync(opts.source, {
@@ -21,7 +25,7 @@ export default opts => {
         rootMode: 'upward-optional',
         ...babelOpts,
       }).code,
-    }
+    };
   } catch (error) {
     return {
       code: `exports.__JITI_ERROR__ = ${JSON.stringify({
@@ -34,6 +38,6 @@ export default opts => {
         message: error.message?.replace('/: ', '').replace(/\(.+\)\s*$/, ''),
       })}`,
       error,
-    }
+    };
   }
-}
+};
