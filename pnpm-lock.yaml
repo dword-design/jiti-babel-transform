@@ -34,8 +34,8 @@ importers:
         specifier: ^11.1.1
         version: 11.2.0
       jiti:
-        specifier: ^1.18.2
-        version: 1.21.6
+        specifier: ^2.0.0
+        version: 2.6.0
       with-local-tmp-dir:
         specifier: ^5.0.1
         version: 5.1.1
@@ -771,6 +771,7 @@ packages:
   '@dword-design/babel-config@4.2.1':
     resolution: {integrity: sha512-RFGQfX00S7JaGHJUzJUU3W/4hNKloWLpY9CMG8hvSSvY9VjaACJ2Ews1YVWBpqVSIjoxHEfoUo99PpNIIPygEg==}
     engines: {node: '>=18'}
+    deprecated: Using TypeScript now
 
   '@dword-design/babel-plugin-wildcard@0.0.3':
     resolution: {integrity: sha512-J+OooxCchKZbU9cKvlWQFc9tDc0NipACWGadLE2JKRBJJcL4e/+3yFwrwestjn9yBk+JEq1FEzRSXi38FXWrag==}
@@ -826,14 +827,17 @@ packages:
   '@dword-design/functions@4.1.7':
     resolution: {integrity: sha512-kc7bzBKZasf0icxKldgB7dkpd1mcEQkPz8c0BP5Wuxy63bMYs+kNWbywFT+xNBWDT6N9cdTczHwBuVBgc8ZU0A==}
     engines: {node: '>=14'}
+    deprecated: Use lodash and endent
 
   '@dword-design/functions@5.0.27':
     resolution: {integrity: sha512-16A97RKtn21xLWI7Y7VhFz4WCWui+TLit/J5/l77BDpWmPi2LzgjQzDbafDDw7OUeY6GEAi/M4jdbuQhsIbSEg==}
     engines: {node: '>=14'}
+    deprecated: Use lodash and endent
 
   '@dword-design/functions@6.0.1':
     resolution: {integrity: sha512-iK2fRD2+9vD6ps8OHYeSJCKCMy9H8A2yjTmVuhxqaVKMYZI1pw0hdWWTfB27czmXn7Lgk/B4ftE5zSYvrYmXZg==}
     engines: {node: '>=18'}
+    deprecated: Use lodash and endent
 
   '@dword-design/jiti-babel-transform@1.0.13':
     resolution: {integrity: sha512-Azq7mrH0dQZNCoiDhMH4aKgJg5TnIX7/tJ/YGR41o7gUE65a6gcsPBQvfDiBKPPqWkuluYrG+2vjat5KSK4GdA==}
@@ -862,6 +866,7 @@ packages:
   '@dword-design/pretest@1.0.15':
     resolution: {integrity: sha512-xN+aEzDzAZeBOboMqnqFXkAOSP02nuSMvA1sMbOpA2BZw7qUCKPLnKi94S+en+upXWXgF/fBpLgEmRR9TeDsCQ==}
     engines: {node: '>=14'}
+    deprecated: Migrated to Playwright
 
   '@dword-design/prettier-plugin-compactify@0.0.1':
     resolution: {integrity: sha512-CsZP1JqqxKhfxnFdvSCB4MYbKbpoLWzB5llLCjDEvd248Scxgw2msdr7W//u3NJJSWmX2ohrbFsxgrUqx81rhA==}
@@ -869,6 +874,7 @@ packages:
   '@dword-design/setup-test@1.0.2':
     resolution: {integrity: sha512-W861E4cbZmUaYri3mhZNfpo2Yxc1hHPP0v5iDZGE+h9EHplY+8tzWaTNHIF67DmrcDLP79zxd/lkJX0xZs0l8Q==}
     engines: {node: '>=14'}
+    deprecated: Migrated to Playwright
 
   '@dword-design/suppress-babel-register-esm-warning@1.1.10':
     resolution: {integrity: sha512-VkXvIeTTutLLGr05RQEcuAs+ePlJa3yN2xuUuA3OtfXywdKlxA9r5xMFzGnHVc/y8T/95Z2eOEBpCn2QkChokg==}
@@ -2476,6 +2482,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@10.1.0:
@@ -3733,6 +3740,10 @@ packages:
 
   jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
+    hasBin: true
+
+  jiti@2.6.0:
+    resolution: {integrity: sha512-VXe6RjJkBPj0ohtqaO8vSWP3ZhAKo66fKrFNCll4BTcwljPLz03pCbaNKfzGP5MbrCYcbJ7v0nOYYwUzTEIdXQ==}
     hasBin: true
 
   js-tokens@4.0.0:
@@ -10742,6 +10753,8 @@ snapshots:
       - utf-8-validate
 
   jiti@1.21.6: {}
+
+  jiti@2.6.0: {}
 
   js-tokens@4.0.0: {}
 
